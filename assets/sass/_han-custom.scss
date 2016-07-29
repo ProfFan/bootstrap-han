@@ -70,9 +70,10 @@ $han-mono-zh:    $han-sans-zh                     !default;
 // * (Zhuyin, checked-toned romanisation and
 // * partial CJK biaodian correction)
 // *
-$han-font-woff: './font/han.woff'                 !default;
-$han-font-otf:  './font/han.otf'                  !default;
-$han-version:    'v1.0.0'                         !default;
+$han-font-woff: '../fonts/han.woff'                 !default;
+$han-font-otf:  '../fonts/han.otf'                  !default;
+$han-font-path: '../fonts/' 						!default;
+$han-version:    'v1.0.0'                     	    !default;
 
 $han-webfont: url(#{$han-font-woff}?#{$han-version}) format('woff'), url(#{$han-font-otf}?#{$han-version}) format('opentype') !default;
 

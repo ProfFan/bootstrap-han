@@ -1,7 +1,9 @@
 var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
     notify = require("gulp-notify"),
-    bower = require('gulp-bower');
+    bower = require('gulp-bower'),
+    concat = require('gulp-concat'),
+    minify = require('gulp-minify');
 
 var config = {
     sassPath: './assets/sass',
@@ -15,6 +17,11 @@ gulp.task('bower', function () {
 
 gulp.task('icons', function () {
     return gulp.src(config.bowerDir + '/font-awesome/fonts/**.*')
+        .pipe(gulp.dest('./public/fonts'));
+});
+
+gulp.task('fonts', function () {
+    return gulp.src(config.bowerDir + '/Han/font/**.*')
         .pipe(gulp.dest('./public/fonts'));
 });
 
@@ -34,8 +41,19 @@ gulp.task('css', function () {
         .pipe(gulp.dest('./public/css'));
 });
 
+ 
+gulp.task('js', function() {
+  gulp.src([
+    'bower_components/bootstrap/dist/js/bootstrap.min.js',
+    'bower_components/Han/dist/han.min.js'
+    ])
+    .pipe(concat("all.js"))
+    .pipe(minify())
+    .pipe(gulp.dest('public/js'))
+});
+
 gulp.task('watch', function() {
     gulp.watch(config.sassPath + '/**/*.scss', ['css']);
 });
 
-gulp.task('default', ['bower', 'icons', 'css']);
+gulp.task('default', ['bower', 'icons', 'fonts', 'css']);
