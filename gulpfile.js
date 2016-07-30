@@ -10,6 +10,10 @@ var config = {
     bowerDir: './bower_components'
 }
 
+gulp.task('publish', function() {
+    return gulp.src(['./public/**/*']).pipe(gulp.dest('../sites/bootstrap-han'));
+});
+
 gulp.task('bower', function () {
     return bower()
         .pipe(gulp.dest(config.bowerDir))
