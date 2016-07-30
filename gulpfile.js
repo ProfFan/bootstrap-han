@@ -30,8 +30,6 @@ gulp.task('css', function () {
         style: 'compressed',
         loadPath: [
             config.sassPath,
-            config.bowerDir + '/bootstrap/scss',
-            config.bowerDir + '/font-awesome/scss',
             config.bowerDir + '/Han'
         ]
     })
