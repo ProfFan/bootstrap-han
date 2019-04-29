@@ -1,22 +1,25 @@
 var gulp = require('gulp'),
-    sass = require('gulp-ruby-sass'),
+    sass = require('gulp-sass'),
     notify = require("gulp-notify"),
-    bower = require('gulp-bower'),
     concat = require('gulp-concat'),
-    minify = require('gulp-minify');
+    minify = require('gulp-minify'),
+    browserSync = require('browser-sync').create();
 
 var config = {
     sassPath: './assets/sass',
     bowerDir: './bower_components'
 }
 
-gulp.task('publish', function() {
-    return gulp.src(['./public/**/*']).pipe(gulp.dest('../sites/bootstrap-han'));
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "./public/"
+        }
+    });
 });
 
-gulp.task('bower', function () {
-    return bower()
-        .pipe(gulp.dest(config.bowerDir))
+gulp.task('publish', function() {
+    return gulp.src(['./public/**/*']).pipe(gulp.dest('../sites/bootstrap-han'));
 });
 
 gulp.task('icons', function () {
@@ -58,4 +61,4 @@ gulp.task('watch', function() {
     gulp.watch(config.sassPath + '/**/*.scss', ['css']);
 });
 
-gulp.task('default', ['bower', 'icons', 'fonts', 'css']);
+gulp.task('default', ['icons', 'fonts', 'css']);

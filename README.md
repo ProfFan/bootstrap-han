@@ -11,8 +11,10 @@ See https://proffan.github.io/bootstrap-han/
 # Setup
 
 ```
-npm install
+yarn global add gulp
+yarn install
 gulp
+gulp browser-sync # to show demo
 ```
 
 # USING
