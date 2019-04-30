@@ -13,16 +13,16 @@ import "highlight.js/styles/solarized-dark.css";
 
 var marked = require('marked');
 marked.setOptions({
-    renderer: new marked.Renderer(),
-    highlight: function(code) {
-      return hljs.highlightAuto(code).value;
-    },
-    langPrefix: 'hljs lang-'
-  });
+  renderer: new marked.Renderer(),
+  highlight: function (code) {
+    return hljs.highlightAuto(code).value;
+  },
+  langPrefix: 'hljs lang-'
+});
 var article_elem = document.getElementById("marked-article");
 
 var s = document.getElementById("marked-src").innerHTML;
 article_elem.innerHTML = marked(s);
 
-var Han = require( 'han-css' )
-Han(article_elem,article_elem).render()
+var Han = require('han-css')
+Han(article_elem, article_elem).render()

@@ -43,10 +43,20 @@ module.exports = {
       }
     ]
   },
+  entry: {
+    'index': './src/index.js',
+    'demo': './src/demo.js'
+  },
   plugins: [
     new HtmlWebPackPlugin({
+      chunks: ['index'],
       template: "src/index.html",
       filename: "./index.html"
+    }),
+    new HtmlWebPackPlugin({
+      chunks: ['demo'],
+      template: "src/demo.html",
+      filename: "./demo.html"
     }),
     new MiniCssExtractPlugin({
       filename: `css/all.css`

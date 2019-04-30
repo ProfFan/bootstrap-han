@@ -75,6 +75,10 @@
   &:not([disabled]):not(.disabled):focus {
     box-shadow: 0 0 0 0.2rem rgba($gray-400, 0.5);
   }
+
+  &.disabled {
+    color: $gray-600;
+  }
 }
 
 [class*="btn-outline-"] {
