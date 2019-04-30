@@ -1,6 +1,5 @@
 // Import bootstrap and fontawesome
 @import "han-custom";
-@import "../../bower_components/Han/index";
 @import "bootstrap-custom";
 @import "font-awesome-custom";
 
@@ -132,8 +131,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 .blog-post-title {
-  //font-family: 'Biaodian Pro Serif', Georgia, 'Kozuka Mincho Pr6N', 'Kozuka Mincho Pro', YuMincho, 'Hiragino Mincho ProN', 'Songti SC', 'Songti TC', 'Han Heiti', sans-serif;
-  //font-family: "Biaodian Pro Serif GB","Numeral LF Serif",Georgia,"Times New Roman","Han Kaiti GB",cursive,serif;
   font-family: inherit;
   margin-bottom: .5rem;
   font-size: 2.5rem;
