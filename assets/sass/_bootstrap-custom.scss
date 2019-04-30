@@ -1,3 +1,5 @@
+@import "bootswatch-vars";
+
 // Core variables and mixins
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
@@ -48,3 +50,6 @@
 
 // Print style
 @import "~bootstrap/scss/print";
+
+@import "bootswatch-lux";
+@import "bootstrap-fix";

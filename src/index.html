@@ -291,7 +291,7 @@
 ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script id="marked-src" type="text/markdown">
-# Markdown Renderer
+# Markdown 渲染测试
 
 ## Part 1
 
@@ -304,6 +304,8 @@
 <div lang="en">
 
 <u>Test</u> is a *Test* article.
+
+<i class="btn btn-success">I am a button</i>
 
 </div>
 
@@ -458,6 +460,34 @@
 <ruby>萬維網<rt>World Wide Web</rt></ruby>
 ```
 
+#### 语法高亮
+
+<kbd>ctrl+c</kbd>
+
+<figure lang="en" class="highlight">
+
+```c++
+#include <corerc/pubsub.h>
+#include <iostream>
+#include <sys/time.h>
+
+class SubscriberImpl final :
+    public corerc::Subscriber<capnp::Text>::Server {
+public:
+
+    kj::Promise<void> pushMessage(PushMessageContext context) override {
+        struct timeval tv; // 中文注释
+        gettimeofday(&tv, NULL);
+
+        std::cout << "Message From Publisher: " <<
+            context.getParams().getMessage().cStr() << tv.tv_usec << std::endl;
+        std::cout.flush();
+        return kj::READY_NOW;
+    }
+};
+```
+
+</figure>
 </div>
 </script>
     <script>

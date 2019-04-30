@@ -1,0 +1,33 @@
+.no-kaiti i.btn,
+var.btn {
+  @extend .btn;
+
+  &.btn-success {
+    @extend .btn-success;
+  }
+
+  &.btn-primary {
+    @extend .btn-primary;
+  }
+  &.btn-secondary {
+    @extend .btn-secondary;
+  }
+  &.btn-success {
+    @extend .btn-success;
+  }
+  &.btn-info {
+    @extend .btn-info;
+  }
+  &.btn-warning {
+    @extend .btn-warning;
+  }
+  &.btn-danger {
+    @extend .btn-danger;
+  }
+  &.btn-light {
+    @extend .btn-light;
+  }
+  &.btn-dark {
+    @extend .btn-dark;
+  }
+}

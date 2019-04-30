@@ -1,4 +1,7 @@
 ### Node ###
+# Editor
+.vscode
+
 # Logs
 logs
 *.log
