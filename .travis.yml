@@ -1,6 +1,10 @@
 rvm:
   - 2.2
-  
+
+language: node_js
+
+node_js:
+  - 10
 before_script:
   - yarn install
   - gem install scss_lint
